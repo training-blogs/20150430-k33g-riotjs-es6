@@ -1,0 +1,17 @@
+<yo-bob>
+    <h1>{label}</h1>
+    <h2>{subLabel}</h2>
+
+    <script type="es6">
+        let firstName = "Bob";
+        let lastName = "Morane";
+
+        this.label = '--- Yo! ---';
+        this.subLabel = `Yo ${firstName} ${lastName}`;
+
+        this.on('mount', () => {
+            this.root.querySelector("h1").style.color = "red";
+            this.root.querySelector("h2").style.color = "green";
+        });
+    </script>
+</yo-bob>

@@ -12,6 +12,17 @@
     <body>
         <yo-bob></yo-bob>
 
+        <script>
+            window.require = function(module) {
+                if (module === 'babel') {
+                    this.transform = function(js, param) {
+                        return babel.transform(js, param);
+                    }
+                }
+                return this;
+            }
+        </script>
+
         <script src="js/bower_components/riot/riot.js"></script>
         <script src="js/bower_components/riot/compiler.js"></script>
         <script>

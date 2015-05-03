@@ -1,0 +1,7 @@
+{
+  "name": "riotjs-es6",
+  "version": "0.0.0",
+  "dependencies": {
+    "babel": "^5.2.6"
+  }
+}

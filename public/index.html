@@ -6,27 +6,37 @@
         <!-- babel -->
         <script src="js/browser-polyfill.js"></script>
         <script src="js/browser.js"></script>
+        <!-- coffee-script -->
+        <script src="js/coffee-script.js"></script>
 
-        <script src="js/web-components/yo-bob.html" type="riot/tag"></script>
+        <script src="js/web-components/yo-bob.babel.html" type="riot/tag"></script>
+        <script src="js/web-components/hi-bob.coffee.html" type="riot/tag"></script>
     </head>
     <body>
         <yo-bob></yo-bob>
+        <hi-bob></hi-bob>
 
-        <!--<script>
+        <script>
             window.require = function(module) {
                 if (module === 'babel') {
                     this.transform = function(js, param) {
                         return babel.transform(js, param);
                     }
                 }
+                if (module === 'coffee-script') {
+                    this.compile = function(js, param) {
+                        return CoffeeScript.compile(js, param)
+                    }
+                }
                 return this;
             }
-        </script>-->
+        </script>
 
         <script src="js/bower_components/riot/riot.js"></script>
         <script src="js/bower_components/riot/compiler.js"></script>
         <script>
             riot.mount("yo-bob");
+            riot.mount("hi-bob");
         </script>
     </body>
 </html>

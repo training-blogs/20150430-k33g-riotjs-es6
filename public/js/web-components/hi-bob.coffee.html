@@ -1,0 +1,16 @@
+<hi-bob>
+    <h1>{label}</h1>
+    <h2>{subLabel}</h2>
+
+    <script type="text/coffeescript">
+        firstName = "Bob"
+        lastName = "Morane"
+
+        @label = '--- Yo! ---'
+        @subLabel = "Yo #{ firstName } #{ lastName }"
+
+        @on 'mount', ->
+            @root.querySelector('h1').style.color = 'orange'
+            @root.querySelector('h2').style.color = 'blue'
+    </script>
+</hi-bob>
